@@ -48,3 +48,18 @@ test('analyze array', () => {
     length: 6
   });
 });
+
+test('caesar cipher: normal', () => {
+  expect(payload.caesarCipher('abcd')).toBe('defg');
+});
+
+test('caesar cipher: wrapping', () => {
+  expect(payload.caesarCipher('xyz')).toBe('abc');
+});
+
+test('caesar cipher: capital', () => {
+  expect(payload.caesarCipher('ABcdYZ')).toBe('DEfgBC');
+});
+test('caesar cipher: punctuation', () => {
+  expect(payload.caesarCipher('ab, cd!')).toBe('de, fg!');
+});

@@ -49,8 +49,23 @@ const Calculator = (function() {
   }
 })();
 
-function caesarCipher() {
-  
+function caesarCipher(str) {
+  let ss = '', temp;
+  for (let i = 0; i < str.length; i++) {
+    temp = str.charCodeAt(i);
+    if ((temp >= 97 && temp <= 122) || (temp >= 65 && temp <= 90)) {
+      temp += 3;
+      if ((temp >= 97 && temp <= 122) || (temp >= 65 && temp <= 90)) {
+        ss += String.fromCharCode(temp);
+      } else {
+        if (temp > 122) temp = 97 + (temp - 123);
+        else temp = 65 + (temp - 91);
+        ss += String.fromCharCode(temp);
+      }
+    } else ss += String.fromCharCode(temp);
+  }
+
+  return ss;
 }
 
 function analyzeArray(arr) {

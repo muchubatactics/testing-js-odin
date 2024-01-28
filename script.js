@@ -53,8 +53,16 @@ function caesarCipher() {
 
 }
 
-function analyzeArray() {
-
+function analyzeArray(arr) {
+  let average = 0, min = arr[0], max = arr[0], length;
+  length = arr.length;
+  for (let i = 0; i < length; i++) {
+    average += arr[i];
+    if (arr[i] > max) max = arr[i];
+    if (arr[i] < min) min = arr[i];
+  }
+  average /= length;
+  return {average, min, max, length};
 }
 
 module.exports = {

@@ -39,3 +39,12 @@ test('Calculator: multiply', () => {
 test('Calculator: divide', () => {
   expect(payload.Calculator.divide(1, 2)).toBeCloseTo(0.5);
 });
+
+test('analyze array', () => {
+  expect(payload.analyzeArray([1,8,3,4,2,6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6
+  });
+});

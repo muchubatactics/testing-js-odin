@@ -19,7 +19,7 @@ function reverseString(str) {
   return ss;
 }
 
-let Calculator = (function() {
+const Calculator = (function() {
   function add(x, y) {
     x = Number(x);
     y = Number(y);
@@ -50,7 +50,7 @@ let Calculator = (function() {
 })();
 
 function caesarCipher() {
-
+  
 }
 
 function analyzeArray(arr) {
